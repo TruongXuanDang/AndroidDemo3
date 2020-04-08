@@ -42,4 +42,9 @@ public class PostAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return postItems.size();
     }
+
+    public void reloadData(List<PostItem> postItems)
+    {
+
+    }
 }
