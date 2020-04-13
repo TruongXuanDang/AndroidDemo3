@@ -3,7 +3,10 @@ package com.truongdx8.myapplication3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class SQLiteActivity extends AppCompatActivity {
     DBHelper db;
@@ -16,9 +19,10 @@ public class SQLiteActivity extends AppCompatActivity {
         db = new DBHelper(this);
         db.getWritableDatabase();
 
-        //insertUser();
+//        insertUser();
         //updateUser();
-        deleteUser();
+        //deleteUser();
+        getAllUser();
     }
 
     private void insertUser()
@@ -45,5 +49,15 @@ public class SQLiteActivity extends AppCompatActivity {
     {
         String mes = db.deleteData(10);
         Toast.makeText(this,mes, Toast.LENGTH_SHORT).show();
+    }
+
+    private void getAllUser()
+    {
+        List<User> list = db.getData();
+        for (User u : list)
+        {
+            Log.d("getAllUser"," Name: "+u.getName()+"id: "+u.getId()+" age: "+u.getAge());
+        }
+
     }
 }

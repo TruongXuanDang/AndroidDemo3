@@ -2,12 +2,16 @@ package com.truongdx8.myapplication3;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -86,5 +90,34 @@ public class DBHelper extends SQLiteOpenHelper {
         {
             return "Failed";
         }
+    }
+
+    public List<User> getData()
+    {
+        List<User> userList = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "SELECT * FROM USER";
+
+        Cursor c = db.rawQuery(sql,null);
+
+        if(c.getCount()>0)
+        {
+            c.moveToFirst();
+
+            do {
+                String name = c.getString(c.getColumnIndex(user_name));
+                int id = c.getInt(c.getColumnIndex(user_id));
+                int age = c.getInt(c.getColumnIndex(user_age));
+                User user = new User(id,name,age);
+                userList.add(user);
+
+            }
+            while (c.moveToNext());
+
+        };
+
+        return userList;
+//        c.getColumnName(1);
+//        c.getColumnNames();
     }
 }
