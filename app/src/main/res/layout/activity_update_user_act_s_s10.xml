@@ -4,41 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewActivity"
+    tools:context=".UpdateUserActSS10"
     android:orientation="vertical">
-    <TextView
-        android:layout_marginTop="100dp"
-        android:id="@+id/tvRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        android:textAlignment="center"/>
     <EditText
         android:id="@+id/etUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="UserName"/>
-    <Spinner
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spGender"/>
+        android:hint="Gender"
+        android:id="@+id/etGender"/>
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:hint="Description"
         android:gravity="top"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I have read and agreed"
-        android:id="@+id/ck"/>
     <Button
-        android:id="@+id/btRegister"
+        android:id="@+id/btUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="UPDATE"
         android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/btDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
+        android:layout_gravity="center"/>
+
 </LinearLayout>
