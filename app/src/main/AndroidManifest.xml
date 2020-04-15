@@ -15,17 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SQLiteActivity">
+        <activity android:name=".ReviewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReadWriteFileActivity">
+        <activity android:name=".SQLiteActivity">
 
         </activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".ReadWriteFileActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".FilesActivity" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".PostActivity" />
